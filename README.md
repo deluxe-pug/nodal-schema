@@ -95,7 +95,7 @@ nodal db:bootstrap
       });
 ```
 * Check with Postman
-![postman](https://www.dropbox.com/s/frr23spvdzipmqg/postToUserGroup.jpg?dl=0)
+![postman](https://dl.dropbox.com/s/frr23spvdzipmqg/postToUserGroup.jpg?dl=0)
 * Check with Postgres
 ```
 $ psql -U postgres
