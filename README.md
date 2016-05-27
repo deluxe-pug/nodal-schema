@@ -134,5 +134,5 @@ UserGroup.query()
   });
 ```
 *Check with Postman
-
+![postman](https://dl.dropbox.com/s/9dupu6qggowz6iz/readFromUserGroup.jpg?dl=0)
 
