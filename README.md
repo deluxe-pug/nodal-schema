@@ -96,9 +96,21 @@ nodal db:bootstrap
 ```
 
 ### Reading from database
-* Modify the 'user.js' model
-* Modify the 'group.js' model
-* Modify the 'user_group.js' model
+* Modify the `user.js` model
+```
+Group.joinsBy(UserGroup, {multiple: true});
+```
+* Modify the `group.js` model
+```
+Group.joinsBy(UserGroup, {multiple: true});
+```
+
+* Modify the `user_group.js` model
+```
+UserGroup.joinsTo(User, {multiple: true});
+UserGroup.joinsTo(Group, {multiple: true});
+```
+
 * Modigy the 'users_constroller'
 ```
 UserGroup.query()
