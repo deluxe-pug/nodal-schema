@@ -33,6 +33,7 @@ module.exports = (function() {
 
   const V1UsersController = Nodal.require('app/controllers/v1/users_controller.js');
   const V1GroupsController = Nodal.require('app/controllers/v1/groups_controller.js');
+  const V1UserGroupsController = Nodal.require('app/controllers/v1/user_groups_controller.js');
 
   /* generator: end imports */
 
@@ -42,6 +43,7 @@ module.exports = (function() {
 
   router.route('/v1/users/{id}').use(V1UsersController);
   router.route('/v1/groups/{id}').use(V1GroupsController);
+  router.route('/v1/user_groups/{id}').use(V1UserGroupsController);
 
   /* generator: end routes */
 
