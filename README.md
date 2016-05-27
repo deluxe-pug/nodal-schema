@@ -121,7 +121,7 @@ UserGroup.joinsTo(User, {multiple: true});
 UserGroup.joinsTo(Group, {multiple: true});
 ```
 
-* Modify the 'users_constroller'
+* Modify the 'users_controller'
 ```
 UserGroup.query()
   .join('user')
