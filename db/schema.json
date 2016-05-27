@@ -2,6 +2,7 @@
 
   "migration_id": 2016052703334370,
 
+
   "models": {
 
     "Group": {
@@ -27,7 +28,6 @@
         {"name": "created_at", "type": "datetime", "properties": {}},
         {"name": "updated_at", "type": "datetime", "properties": {}}
       ]
-
     },
 
     "UserGroup": {
@@ -41,7 +41,6 @@
         {"name": "created_at", "type": "datetime", "properties": {}},
         {"name": "updated_at", "type": "datetime", "properties": {}}
       ]
-
     }
 
   }
