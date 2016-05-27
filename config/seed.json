@@ -1,6 +1,18 @@
 {
 
-  "development": {},
+  "development": {
+    "User": [
+      {"name": "Kevin"}, 
+      {"name": "Michelle"}, 
+      {"name": "Connie"}, 
+      {"name": "Liam"}
+    ],
+    "Group": [
+      {"name": "deluxe-pug" },
+      {"name": "savory-penguin"},
+      {"name": "sabine-sardine"}
+    ]
+  },
 
   "test": {},
 
