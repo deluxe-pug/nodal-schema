@@ -61,4 +61,54 @@ nodal db:bootstrap
 * http://localhost:3000/v1/user_groups
 
 ### Writing to database
-* Modify 
+* Modify the `user_groups_controller.js`
+```
+    const User = Nodal.require('app/models/user.js');
+    const Group = Nodal.require('app/models/group.js');
+
+    //....
+
+    create() {
+
+      let user_id;
+      let group_id;
+      let user_group;
+      const userName = { name: this.params.body.userName };
+      const groupName = { name: this.params.body.groupName };
+
+      User.findOrCreateBy("name", userName, (err, user) => {
+        if ( err ) { return this.respond(err); } // make sure your handle error
+        user_id = user.get('id');
+
+        Group.findOrCreateBy("name", groupName, (err, group) => {
+          if ( err ) { return this.respond(err); } // every step!!!
+          group_id = group.get('id');
+
+          user_group = { user_id, group_id };
+          
+          UserGroup.create(user_group, (err, userGroup) => {
+            this.respond(err || userGroup);
+          });
+
+        });
+
+      });
+```
+
+### Reading from database
+* Modify the 'user.js' model
+* Modify the 'group.js' model
+* Modify the 'user_group.js' model
+* Modigy the 'users_constroller'
+```
+UserGroup.query()
+  .join('user')
+  .join('group')
+  .where(this.params.query)
+  .end((err, models) => {
+
+    this.respond(err || models, [{'user': ['id', 'name']}, {'group': ['id', 'name']}]);
+
+  });
+```
+
