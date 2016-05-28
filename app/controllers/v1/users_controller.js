@@ -10,10 +10,13 @@ module.exports = (function() {
     index() {
 
       User.query()
+        .join('userGroups__group')
         .where(this.params.query)
         .end((err, models) => {
 
-          this.respond(err || models);
+          this.respond(err || models, 
+            ['id', 'name', {userGroups: [{group: ['name']}]}]
+          );
 
         });
 
