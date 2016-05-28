@@ -94,6 +94,16 @@ nodal db:bootstrap
 
       });
 ```
+* Check with Postman
+![postman](https://dl.dropbox.com/s/frr23spvdzipmqg/postToUserGroup.jpg?dl=0)
+* Check with Postgres
+```
+$ psql -U postgres
+$ \l
+$ \c nodal_schema_development
+$ \dt
+$ SELECT * FROM users;
+```
 
 ### Reading from database
 * Modify the `user.js` model
@@ -111,7 +121,7 @@ UserGroup.joinsTo(User, {multiple: true});
 UserGroup.joinsTo(Group, {multiple: true});
 ```
 
-* Modify the 'users_constroller'
+* Modify the 'users_controller'
 ```
 UserGroup.query()
   .join('user')
@@ -123,4 +133,6 @@ UserGroup.query()
 
   });
 ```
+*Check with Postman
+![postman](https://dl.dropbox.com/s/9dupu6qggowz6iz/readFromUserGroup.jpg?dl=0)
 
