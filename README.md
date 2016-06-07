@@ -108,15 +108,22 @@ $ SELECT * FROM users;
 ### Reading from database
 * Modify the `user.js` model
 ```
-Group.joinsBy(UserGroup, {multiple: true});
+const UserGroup = Nodal.require('app/models/user_group.js');
+//...
+User.joinedBy(UserGroup, {multiple: true});
 ```
 * Modify the `group.js` model
 ```
-Group.joinsBy(UserGroup, {multiple: true});
+const UserGroup = Nodal.require('app/models/user_group.js');
+//...
+Group.joinedBy(UserGroup, {multiple: true});
 ```
 
 * Modify the `user_group.js` model
 ```
+const Group = Nodal.require('app/models/group.js');
+const User = Nodal.require('app/models/user.js');
+//...
 UserGroup.joinsTo(User, {multiple: true});
 UserGroup.joinsTo(Group, {multiple: true});
 ```
