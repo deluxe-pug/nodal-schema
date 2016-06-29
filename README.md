@@ -62,7 +62,7 @@ nodal db:bootstrap
 
 ### Writing to database
 * Modify the `user_groups_controller.js`
-```
+```javascript
     const User = Nodal.require('app/models/user.js');
     const Group = Nodal.require('app/models/group.js');
 
@@ -107,7 +107,7 @@ $ SELECT * FROM users;
 
 ### Reading from database
 * Modify the `user.js` model
-```
+```javascript
 const UserGroup = Nodal.require('app/models/user_group.js');
 //...
 User.joinedBy(UserGroup, {multiple: true});
@@ -120,7 +120,7 @@ Group.joinedBy(UserGroup, {multiple: true});
 ```
 
 * Modify the `user_group.js` model
-```
+```javascript
 const Group = Nodal.require('app/models/group.js');
 const User = Nodal.require('app/models/user.js');
 //...
@@ -129,7 +129,7 @@ UserGroup.joinsTo(Group, {multiple: true});
 ```
 
 * Modify the 'users_controller'
-```
+```javascript
 UserGroup.query()
   .join('user')
   .join('group')
